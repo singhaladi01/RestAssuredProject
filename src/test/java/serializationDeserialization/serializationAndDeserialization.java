@@ -3,7 +3,6 @@ package serializationDeserialization;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -17,7 +16,7 @@ public class serializationAndDeserialization {
 		//Serialization
 		
 		 /*
-		 * FileOutputStream allows us to write the file into somewhere in memory or database, 
+		 * FileOutputStream allows us to write the file somewhere in memory or database, 
 		 *before writing into memory we need to convert our object into file, using ObjectOutputStream class
 		 **/
 		FileOutputStream fos = new FileOutputStream("test.txt");
@@ -29,6 +28,7 @@ public class serializationAndDeserialization {
 		
 		//Deserialization
 		FileInputStream fis = new FileInputStream("test.txt");
+		//convert file to object
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		
 		Test t2 = (Test)ois.readObject();
